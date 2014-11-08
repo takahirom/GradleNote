@@ -1,0 +1,5 @@
+task greet<<{
+        File helloText = file('src/text.txt',PathValidation.FILE)
+        println helloText.text
+}
+
