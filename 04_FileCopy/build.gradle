@@ -1,0 +1,12 @@
+task copy<<{
+        // copy png not 9patch. and rename
+        copy{
+                from('src')
+                into("res")
+
+                include '**/*.png'
+                exclude '**/*.9.png'
+                rename{fileName->'renamed_'+fileName}
+        }
+}
+
