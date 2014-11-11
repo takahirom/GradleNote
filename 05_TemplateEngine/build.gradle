@@ -1,0 +1,8 @@
+task useTemplate<<{
+	copy {
+		from 'src'
+		into 'build'
+		expand project.properties
+	}
+}
+
