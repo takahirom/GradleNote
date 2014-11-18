@@ -1,13 +1,15 @@
 # Show properties
 ```
-gradle properties
+gradle -q properties
 ```
 
 # Show project specific properties 
 ```
-gradle app:properties
+gradle -q app:properties
 ```
 # Show task usage details
 ```
 ./gradlew -q help --task asseDeb
 ```
+
+# 
