@@ -1,0 +1,4 @@
+task greet<<{
+	new Greeting().greet()
+}
+
