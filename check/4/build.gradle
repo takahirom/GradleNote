@@ -1,0 +1,15 @@
+// themeDirは必要なファイル画像があるディレクトリのパス  
+def themeFileTree = fileTree("theme")
+
+// require_imagesから一行ずつ取り出す  
+file("require_files").eachLine{ requiredFileName ->
+
+        // 必要なファイルでフィルタをかける
+        def filteredFileTree = themeFileTree.filter{file->
+                file.name == requiredFileName
+        }
+        // fileTreeからfileリストに変換
+        def filteredFiles = filteredFileTree.files
+                //　リストサイズが0以上(存在するかどうか)
+                assert filteredFiles.size() > 0
+}

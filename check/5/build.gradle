@@ -1,0 +1,17 @@
+def RESOURCE_PATH = "/app/src/main/res/"
+def appName = "SweetTheme"
+// xmlファイルを書き換えを行いつつ上書き
+copy {
+        // コピー元の設定
+        from(TEMPLATE_PROJECT_PATH + RESOURCE_PATH){
+                // コピーするのをxmlのみに限定する
+                include "**/*.xml"
+        }
+
+        // コピー先の設定
+        into outputPath + RESOURCE_PATH
+                filter { line ->
+                        // 一行ごとに置き換えを行う
+                        line.replaceAll "TEMPLATE_APP_NAME", appName
+                }
+}
